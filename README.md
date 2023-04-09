@@ -11,7 +11,8 @@ Specifically, we reproduce `Table 1`, `Table 2`, `Figure 4` and `Figure 5`. Sinc
 In this part, we dynamically update our contribution in our group with three people.
 
 - [x] 2023/04/07: Kunhong Yu creates original and empty repo to start project
-- [x] 2023/04/08: Kunhong Yu add initial `config/cfg.yaml` file
+- [x] 2023/04/08: Kunhong Yu adds initial `config/cfg.yaml` file
+- [x] 2023/04/09: Kunhong Yu uploads original paper of FocusedDropout
 
 ## References
 - FocusedDropout for Convolutional Neural Network [[ref]](https://arxiv.org/abs/2103.15425)
