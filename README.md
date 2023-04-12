@@ -5,6 +5,27 @@ Created by: Kunhong Yu (444447)/Islam Islamov ()/Leyla Ellazova ()
 First of all, thank the authors very much for sharing this excellent paper [***FocusedDropout for Convolutional Neural Network***](https://arxiv.org/abs/2103.15425) with us. This repository contains FoucusedDropout and some basic implementation of experiments in paper. 
 Specifically, we reproduce `Table 1`, `Table 2`, `Figure 4` and `Figure 5`. Since authors did not release original code and some important hyper-parameters, we try our best to achieve performance they claim in the paper, but the main motivation is to verify the proposed FocusedDropout is state-of-the-art, not to show exact testing accuracy, we use NVIDIA RTX A5000 to train and test all models, but we can not burden a lot of costs of all experiments, that's why we only reproduce parts of them.
 
+## Background
+Dropout is a common-used technique in Neural Network (e.g. CNN, RNN, Transformer, etc.) to prevent co-adaptation and overfitting. In this paper, authors propose a novel dropout technique -- FocusedDropout, which does not drop neurons randomly, but 
+focuses more on elements related with classification information.
+
+<p align="center">
+	<img src = ./README/fd.png />
+</p>
+
+And whole algorithm goes,
+
+<p align="center">
+	<img src = ./README/al.png />
+</p>
+
+
+Authors also compare with original [Dropout](https://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf), [SpatialDropout](https://arxiv.org/pdf/1411.4280.pdf), [DropBlock](https://arxiv.org/abs/1810.12890). 
+In simple words, Dropout randomly drops neurons in the model and SpatialDropout randomly drops whole feature channel in a feature map and DropBlock drops continuous area in spatial way in a single feature channel, but FocusedDropout drops neurons according to class information. In experiments, authors use [CIFAR10, CIFAR100](https://www.cs.toronto.edu/~kriz/cifar.html) as data sets and [ResNet20/56/110](https://arxiv.org/abs/1512.03385), [VGG19](https://arxiv.org/abs/1409.1556), [WRN28](https://arxiv.org/abs/1605.07146) and [DenseNet100](https://arxiv.org/abs/1608.06993) as backbones. We won't go every detail in these since there is a much broader technique stack in Computer Vision with deep learning, in this repo, we more focus on implementation to reproduce, moreover, we use `fp16` which is half of float32 to define and train models to save memory usage.
+
+### Data
+The CIFAR10 dataset consists of 60000 32×32 color images of 10 classes, each with 6000 images including 5000 training images and 1000 test images. The CIFAR100 dataset has the same number of images but 100 classes, which means the training of CIFAR100 is harder than CIFAR10 because of more image types and less training data for each kinds. 
+
 
 ## Contribution
 
@@ -14,6 +35,7 @@ In this part, we dynamically update our contribution in our group with three peo
 - [x] 2023/04/08: Kunhong Yu adds initial `config/cfg.yaml` file
 - [x] 2023/04/09: Kunhong Yu uploads original paper of FocusedDropout
 - [x] 2023/04/11: Kunhong Yu adds three dropout methods: Dropout, SpatialDropout and DropBlock
+- [x] 2023/04/12: Kunhong Yu adds FocusedDropout implementation
 
 ## References
 - FocusedDropout for Convolutional Neural Network [[ref]](https://arxiv.org/abs/2103.15425)
