@@ -36,6 +36,7 @@ In this part, we dynamically update our contribution in our group with three peo
 - [x] 2023/04/09: Kunhong Yu uploads original paper of FocusedDropout
 - [x] 2023/04/11: Kunhong Yu adds three dropout methods: Dropout, SpatialDropout and DropBlock
 - [x] 2023/04/12: Kunhong Yu adds FocusedDropout implementation
+- [x] 2023/04/15: Kunhong Yu adds `utils.py` script 
 
 ## References
 - FocusedDropout for Convolutional Neural Network [[ref]](https://arxiv.org/abs/2103.15425)
