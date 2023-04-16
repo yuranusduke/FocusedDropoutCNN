@@ -15,16 +15,18 @@ from torch.nn import functional as F
 class DropBlock(nn.Module):
     """Define drop block module We here implement 2d version"""
 
-    def __init__(self, block_size : int, drop_rate = 0.5):
+    def __init__(self, block_size : int, drop_rate = 0.5, half = True):
         """
         Args : 
             --block_size
             --drop_rate: default is 0.5
+            --half
         """
         super(DropBlock, self).__init__()
 
         self.drop_rate = drop_rate
         self.block_size = block_size
+        self.half = half
 
     def forward(self, x):
         # shape: (bsize, channels, height, width)
@@ -39,6 +41,8 @@ class DropBlock(nn.Module):
 
             # sample mask
             mask = (torch.rand(x.shape[0], *x.shape[2:]) < gamma).float() # dropped mask
+            if self.half:
+                mask = mask.to(torch.float16)
 
             # place mask on input device
             mask = mask.to(x.device)
@@ -89,7 +93,7 @@ class LinearScheduler(nn.Module):
         self.drop_layer = drop_layer
         self.i = 0
         self.drop_values = np.linspace(start = start_value, 
-                                   stop = stop_value, num = int(nr_steps))
+                                       stop = stop_value, num = int(nr_steps))
 
     def forward(self, x):
         return self.drop_layer(x)

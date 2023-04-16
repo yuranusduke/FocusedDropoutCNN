@@ -9,6 +9,7 @@ import sys
 from models.backbones import *
 import os
 import tqdm
+import math
 
 ####################################
 #        About configurations      #
@@ -36,8 +37,13 @@ def set_device():
 	"""
 	is_gpu = torch.cuda.is_available()
 	if is_gpu:
-		print('Using GPU')
-		device = torch.device('cuda')
+		device_count = torch.cuda.device_count()
+		if device_count > 1:
+			print('Using GPU:1')
+			device = torch.device('cuda:1')
+		else:
+			print('Using GPU:0')
+			device = torch.device('cuda')
 	else:
 		print('Using CPU')
 		device = torch.device('cpu')
@@ -60,18 +66,19 @@ def get_dataloader(cfg, mode = 'train'):
 
 	if mode == 'train': # we follow original paper to include random crop and random flip in training
 		transform = \
-		tv.transforms.Compose([
-			tv.transforms.RandomCrop(int(cfg['INPUT']['SIZE'][0]), padding = 4),
-			tv.transforms.RandomHorizontalFlip(),
-			tv.transforms.ToTensor(),
-			tv.transforms.Normalize(mean = cfg['INPUT']['PIXEL_MEAN'], std = cfg['INPUT']['PIXEL_STD'])
-		])
+			tv.transforms.Compose([
+				tv.transforms.RandomHorizontalFlip(),
+				tv.transforms.RandomCrop(int(cfg['INPUT']['SIZE'][0]), padding = 4),
+				tv.transforms.RandomRotation(15),
+				tv.transforms.ToTensor(),
+				tv.transforms.Normalize(mean = cfg['INPUT']['PIXEL_MEAN'], std = cfg['INPUT']['PIXEL_STD'])
+			])
 	else: # testing
 		transform = \
-		tv.transforms.Compose([
-			tv.transforms.ToTensor(),
-			tv.transforms.Normalize(mean = cfg['INPUT']['PIXEL_MEAN'], std = cfg['INPUT']['PIXEL_STD'])
-		])
+			tv.transforms.Compose([
+				tv.transforms.ToTensor(),
+				tv.transforms.Normalize(mean = cfg['INPUT']['PIXEL_MEAN'], std = cfg['INPUT']['PIXEL_STD'])
+			])
 
 
 	if cfg['DATALOADER']['DATANAME'] == 'cifar10': # cifar10
@@ -125,6 +132,9 @@ def load_model(cfg, mode = 'train'):
 		files = list(filter(lambda x: x.endswith('pth'), files))
 		model.load_state_dict(torch.load(os.path.join(model_dir, files[0]), map_location = "cpu")) # first load in cpu
 
+	if cfg['OPTIM']['PREC'] == 'fp16':
+		model = model.half()
+
 	return model
 
 ############################
@@ -163,7 +173,7 @@ class AverageMeter(object):
 ####################################
 #          About testing           #
 ####################################
-def cal_acc(model, device, dataloader = None, x = None, y = None, mode = 'train'):
+def cal_acc(model, device, dataloader = None, x = None, y = None, mode = 'train', half = True):
 	"""
 	Compute accuracy of current model
 	Args :
@@ -174,6 +184,7 @@ def cal_acc(model, device, dataloader = None, x = None, y = None, mode = 'train'
 		--y: input batch_y
 		--mode: 'train'/'test'
 		--verbose
+		--half
 	"""
 	model.eval() # important to disable dropout
 
@@ -192,6 +203,9 @@ def cal_acc(model, device, dataloader = None, x = None, y = None, mode = 'train'
 			for i, (batch_x, batch_y) in tqdm.tqdm(enumerate(dataloader)):
 				sys.stdout.write(f'\r>>Evaluating batch {i + 1} / {len(dataloader)}.')
 				sys.stdout.flush()
+
+				if half:
+					batch_x = batch_x.half()
 
 				batch_x = batch_x.to(device)
 				batch_y = batch_y.to(device)

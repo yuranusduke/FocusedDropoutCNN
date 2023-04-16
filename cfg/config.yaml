@@ -1,12 +1,12 @@
 DATALOADER:
   PATH: "./data"
-  DATANAME: "cifar10" # cifar01 or cifar100
-  BATCH_SIZE: 32 # original paper does not specify, we use default value in research field
+  DATANAME: "cifar10" # cifar10 or cifar100
+  BATCH_SIZE: 128 # original paper does not specify, we use default value in research field
 
 INPUT:
   SIZE: [32, 32]
-  PIXEL_MEAN: [0.48145466, 0.4578275, 0.40821073] # obtained from imagenet
-  PIXEL_STD: [0.26862954, 0.26130258, 0.27577711] # obtained from imagenet
+  PIXEL_MEAN: [0.4914, 0.4822, 0.4465]
+  PIXEL_STD: [0.2023, 0.1994, 0.2010] # obtained from imagenet
 
 OUTPUT:
   DIR: ""
@@ -14,14 +14,14 @@ OUTPUT:
 SEED: 0
 
 OPTIM:
-  NAME: "sgd"
-  LR: 0.02
-  MAX_EPOCH: 1
+  LR: 0.1
+  MAX_EPOCH: 100
   LR_SCHEDULER: "step"
   LR_MILESTONES: [150, 225]
-  LR_DECAY: 0.1
+  LR_DECAY: 0.2
   PART_RATE: 0.1
-  WEIGHT_DECAY: 1e-3 # for FocusedDropout, we need to put higher weight decay as paper demonstrated
+  PREC: 'fp16'
+  WEIGHT_DECAY: 5e-4 # for FocusedDropout, we need to put higher weight decay as paper demonstrated
   DROP_RATE: 0.3
   DROP_METHOD: ""
   BLOCK_SIZE: 7 # default

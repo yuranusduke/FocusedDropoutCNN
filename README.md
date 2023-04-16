@@ -37,9 +37,21 @@ In this part, we dynamically update our contribution in our group with three peo
 - [x] 2023/04/11: Kunhong Yu adds three dropout methods: Dropout, SpatialDropout and DropBlock
 - [x] 2023/04/12: Kunhong Yu adds FocusedDropout implementation
 - [x] 2023/04/15: Kunhong Yu adds `utils.py` script 
+- [x] 2023/04/16: Kunhong Yu modifies multiple files, including `config.yaml`, and fix all dropout methods' bugs and upload running script `run.sh`
 
 ## References
 - FocusedDropout for Convolutional Neural Network [[ref]](https://arxiv.org/abs/2103.15425)
+- Dropout: A Simple Way to Prevent Neural Networks from
+Overfitting [[ref]](https://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pdf)
+- Efficient Object Localization Using Convolutional Networks [[ref]](https://arxiv.org/pdf/1411.4280.pdf)
+- DropBlock: A regularization method for convolutional networks [[ref]](https://arxiv.org/abs/1810.12890)
+- Deep Residual Learning for Image Recognition [[ref]](https://arxiv.org/abs/1512.03385)
+- Very Deep Convolutional Networks for Large-Scale Image Recognition [[ref]](https://arxiv.org/abs/1409.1556)
+- Densely Connected Convolutional Networks [[ref]](https://arxiv.org/abs/1608.06993)
+- Wide Residual Networks [[ref]](https://arxiv.org/abs/1605.07146)
+- Learning Multiple Layers of Features from Tiny Images [[ref]](https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf)
+- Learning Deep Features for Discriminative Localization [[ref]](https://arxiv.org/abs/1512.04150)
+- SGDR: Stochastic Gradient Descent with Warm Restarts [[ref]](https://arxiv.org/pdf/1608.03983.pdf)
 
 
 ### To cite our work
