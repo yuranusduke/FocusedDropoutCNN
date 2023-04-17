@@ -1,5 +1,7 @@
 # Unofficial Implementation of  ***FocusedDropout for Convolutional Neural Network***
 
+### <font color = 'green'> Project for Reproducible Research </font>
+
 Created by: Kunhong Yu (444447)/Islam Islamov ()/Leyla Ellazova ()
 
 First of all, thank the authors very much for sharing this excellent paper [***FocusedDropout for Convolutional Neural Network***](https://arxiv.org/abs/2103.15425) with us. This repository contains FoucusedDropout and some basic implementation of experiments in paper. 
