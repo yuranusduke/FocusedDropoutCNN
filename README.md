@@ -2,7 +2,7 @@
 
 ### <font color = 'green'> Project for Reproducible Research </font>
 
-Created by: Kunhong Yu (444447)/Islam Islamov ()/Leyla Ellazova ()
+Created by: Kunhong Yu (444447)/Islam Islamov (444601)/Leyla Ellazova ()
 
 First of all, thank the authors very much for sharing this excellent paper [***FocusedDropout for Convolutional Neural Network***](https://arxiv.org/abs/2103.15425) with us. This repository contains FoucusedDropout and some basic implementation of experiments in paper. 
 Specifically, we reproduce `Table 1`, `Table 2`, `Figure 4` and `Figure 5`. Since authors did not release original code and some important hyper-parameters, we try our best to achieve performance they claim in the paper, but the main motivation is to verify the proposed FocusedDropout is state-of-the-art, not to show exact testing accuracy, we use NVIDIA RTX A5000 to train and test all models, but we can not burden a lot of costs of all experiments, that's why we only reproduce parts of them.
