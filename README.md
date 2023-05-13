@@ -44,6 +44,8 @@ In this part, we dynamically update our contribution in our group with three peo
 - [x] 2023/05/04: Kunhong Yu uploads `main.py`, `train_one_epoch.py` and `run_full.sh` files.
 - [x] 2023/05/07: Kunhong Yu uploads `generate_anim_cam.py`.
 - [x] 2023/05/09: Kunhong Yu creates a new branch `results` to store experimental results.
+- [x] 2023/05/13: Kunhong Yu adds `densenet100.py`, and parse shell script.
+
 
 ## References
 - FocusedDropout for Convolutional Neural Network [[ref]](https://arxiv.org/abs/2103.15425)
