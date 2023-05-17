@@ -98,7 +98,6 @@ Please refer to [result page](https://github.com/yuranusduke/FocusedDropoutCNN/t
 In this part, we dynamically update our contribution in our group with three people.
 
 :heavy_check_mark: 2023/04/07: Kunhong Yu creates original and empty repo to start project
-
 :heavy_check_mark: 2023/04/08: Kunhong Yu adds initial `config/cfg.yaml` file
 
 :heavy_check_mark: 2023/04/09: Kunhong Yu uploads original paper of FocusedDropout
