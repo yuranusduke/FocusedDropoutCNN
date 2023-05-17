@@ -28,6 +28,54 @@ In simple words, Dropout randomly drops neurons in the model and SpatialDropout 
 ### Data
 The CIFAR10 dataset consists of 60000 32×32 color images of 10 classes, each with 6000 images including 5000 training images and 1000 test images. The CIFAR100 dataset has the same number of images but 100 classes, which means the training of CIFAR100 is harder than CIFAR10 because of more image types and less training data for each kinds. 
 
+## Requirements
+
+In order to reimplement our results, please first install some packages by typing following command in command line, but before doing this, you should install [anaconda](https://www.anaconda.com/) based on your device information:
+
+```Python
+pip install -r requirements.txt 
+```
+
+## Implementation
+
+### Code Organization
+
+```bash
+├── README.md
+├── cfg
+│   └── config.yaml
+├── checkpoints
+├── data
+├── engine
+│   ├── __init__.py
+│   ├── parse_results.py
+│   ├── test.py
+│   ├── train.py
+│   └── train_one_epoch.py
+├── generate_anim_cam.py
+├── main.py
+├── models
+│   ├── backbones
+│   │   ├── __init__.py
+│   │   ├── densenet100.py
+│   │   ├── resnet.py
+│   │   ├── vgg19.py
+│   │   └── wrn28.py
+│   └── dropout
+│       ├── DropBlock.py
+│       ├── Dropout.py
+│       ├── FocusedDropout.py
+│       ├── SpatialDropout.py
+│       └── __init__.py
+├── parse.sh
+├── parse_full.sh
+├── run.sh
+├── run_full.sh
+└── utils.py
+```
+
+Here we display all codes we create in the project. `README.md` is markdown file you are reading now. `config.yaml` is a `yaml` file to build configuration like you will see in the next subsection. `checkpoints` is a folder which saves all trained models and details of training/testing. `data` stores data sets. `engine` stores training and testing functions, where `parse_results.py` is used to parse testing results to command line, `test.py` is used to test models, `train.py` and `train_one_epoch.py` are utilized to train models. `generate_anim_cam.py` generates animated CAM which you will see in the following section. `main.py` is main function of whole project. `models` stores all models' definitions, where `backbones` contains `densenet100`, all kinds of `resnet`, `vgg19` and `wrn28` models, `dropout` subfolder contains all kinds of dropout method, including FocusedDropout. `utils.py` contains utility functions. Last but not least, three more `bash` scripts are provided to run different kinds of experiments which you will gain more intuition in the following sections.	
+
 
 ## Contribution
 
@@ -45,6 +93,7 @@ In this part, we dynamically update our contribution in our group with three peo
 - [x] 2023/05/07: Kunhong Yu uploads `generate_anim_cam.py`.
 - [x] 2023/05/09: Kunhong Yu creates a new branch `results` to store experimental results.
 - [x] 2023/05/13: Kunhong Yu adds `densenet100.py`, and parse shell script.
+- [x] 2023/05/17: Kunhong Yu adds few more python files and fixes bugs in code.
 
 
 ## References
