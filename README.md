@@ -97,19 +97,31 @@ Please refer to [result page](https://github.com/yuranusduke/FocusedDropoutCNN/t
 
 In this part, we dynamically update our contribution in our group with three people.
 
-- :heavy_check_mark: 2023/04/07: Kunhong Yu creates original and empty repo to start project
-- [x] 2023/04/08: Kunhong Yu adds initial `config/cfg.yaml` file
-- [x] 2023/04/09: Kunhong Yu uploads original paper of FocusedDropout
-- [x] 2023/04/11: Kunhong Yu adds three dropout methods: Dropout, SpatialDropout and DropBlock
-- [x] 2023/04/12: Kunhong Yu adds FocusedDropout implementation
-- [x] 2023/04/15: Kunhong Yu adds `utils.py` script 
-- [x] 2023/04/16: Kunhong Yu modifies multiple files, including `config.yaml`, and fix all dropout methods' bugs and upload running script `run.sh`
-- [x] 2023/04/24: Kunhong Yu finishes `resnet.py` to implement all resnet-based models: ResNet20/56/110.
-- [x] 2023/05/04: Kunhong Yu uploads `main.py`, `train_one_epoch.py` and `run_full.sh` files.
-- [x] 2023/05/07: Kunhong Yu uploads `generate_anim_cam.py`.
-- [x] 2023/05/09: Kunhong Yu creates a new branch `results` to store experimental results.
-- [x] 2023/05/13: Kunhong Yu adds `densenet100.py`, and parse shell script.
-- [x] 2023/05/17: Kunhong Yu adds few more python files and fixes bugs in code and update README.md.
+:heavy_check_mark: 2023/04/07: Kunhong Yu creates original and empty repo to start project
+
+:heavy_check_mark: 2023/04/08: Kunhong Yu adds initial `config/cfg.yaml` file
+
+:heavy_check_mark: 2023/04/09: Kunhong Yu uploads original paper of FocusedDropout
+
+:heavy_check_mark: 2023/04/11: Kunhong Yu adds three dropout methods: Dropout, SpatialDropout and DropBlock
+
+:heavy_check_mark: 2023/04/12: Kunhong Yu adds FocusedDropout implementation
+
+:heavy_check_mark: 2023/04/15: Kunhong Yu adds `utils.py` script 
+
+:heavy_check_mark: 2023/04/16: Kunhong Yu modifies multiple files, including `config.yaml`, and fix all dropout methods' bugs and upload running script `run.sh`
+
+:heavy_check_mark: 2023/04/24: Kunhong Yu finishes `resnet.py` to implement all resnet-based models: ResNet20/56/110.
+
+:heavy_check_mark: 2023/05/04: Kunhong Yu uploads `main.py`, `train_one_epoch.py` and `run_full.sh` files.
+
+:heavy_check_mark: 2023/05/07: Kunhong Yu uploads `generate_anim_cam.py`.
+
+:heavy_check_mark: 2023/05/09: Kunhong Yu creates a new branch `results` to store experimental results.
+
+:heavy_check_mark: 2023/05/13: Kunhong Yu adds `densenet100.py`, and parse shell script.
+
+:heavy_check_mark: 2023/05/17: Kunhong Yu adds few more python files and fixes bugs in code and update README.md.
 
 
 ## References
