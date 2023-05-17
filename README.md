@@ -2,7 +2,7 @@
 
 ## Results Branch
 
-### <font color = 'green'> Project Results for Reproducible Research </font>
+### <font color = 'green'> Project Results for Reproducible Research </font> :bar_chart:
 
 - [Results Contents]()
 	- [Results](#results)
