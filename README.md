@@ -1,5 +1,7 @@
 # Unofficial Implementation of  ***FocusedDropout for Convolutional Neural Network***
 
+![](https://img.shields.io/badge/data%20science-reproducible%20research-blue) ![](https://img.shields.io/badge/deeplearning-computer%20vision-orange) ![](https://img.shields.io/badge/deeplearning-dropout-green) 
+
 ### <font color = 'green'> Project for Reproducible Research </font> :art:
 
 Created by: Kunhong Yu (444447)/Islam Islamov (444601)/Leyla Ellazova ()
@@ -140,6 +142,8 @@ Overfitting [[ref]](https://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pd
 
 
 ### To cite our work
+
+Also we would appreciate it if receiving a star :star:.
 
 ```
 @misc{FDI,
