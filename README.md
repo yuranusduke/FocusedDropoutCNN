@@ -1,6 +1,6 @@
 # Unofficial Implementation of  ***FocusedDropout for Convolutional Neural Network***
 
-### <font color = 'green'> Project for Reproducible Research </font>
+### <font color = 'green'> Project for Reproducible Research </font> :art:
 
 Created by: Kunhong Yu (444447)/Islam Islamov (444601)/Leyla Ellazova ()
 
