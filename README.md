@@ -4,6 +4,18 @@
 
 Created by: Kunhong Yu (444447)/Islam Islamov (444601)/Leyla Ellazova ()
 
+- [Contents]()
+	- [Background](#background)
+		- [Data](#data)
+	- [Requirements](#requirements)
+	- [Implementation](#implementation)
+		- [Code Organization](#code-organization)
+		- [Hyper-parameters and defaults](#hyper-parameters-and-defaults)
+		- [Train & Test](#train-&-test)
+	- [Results](#results)
+	- [Contributions](#contributions)
+	- [References](#references)
+
 First of all, thank the authors very much for sharing this excellent paper [***FocusedDropout for Convolutional Neural Network***](https://arxiv.org/abs/2103.15425) with us. This repository contains FoucusedDropout and some basic implementation of experiments in paper. 
 Specifically, we reproduce `Table 1`, `Table 2`, `Figure 4` and `Figure 5`. Since authors did not release original code and some important hyper-parameters, we try our best to achieve performance they claim in the paper, but the main motivation is to verify the proposed FocusedDropout is state-of-the-art, not to show exact testing accuracy, we use NVIDIA RTX A5000 to train and test all models, but we can not burden a lot of costs of all experiments, that's why we only reproduce parts of them.
 
@@ -93,7 +105,7 @@ In this part, we dynamically update our contribution in our group with three peo
 - [x] 2023/05/07: Kunhong Yu uploads `generate_anim_cam.py`.
 - [x] 2023/05/09: Kunhong Yu creates a new branch `results` to store experimental results.
 - [x] 2023/05/13: Kunhong Yu adds `densenet100.py`, and parse shell script.
-- [x] 2023/05/17: Kunhong Yu adds few more python files and fixes bugs in code.
+- [x] 2023/05/17: Kunhong Yu adds few more python files and fixes bugs in code and update README.md.
 
 
 ## References
