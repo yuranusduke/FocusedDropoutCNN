@@ -1,5 +1,6 @@
 # Unofficial Implementation of  ***FocusedDropout for Convolutional Neural Network***
 
+![](https://img.shields.io/badge/data%20science-reproducible%20research-blue) ![](https://img.shields.io/badge/deeplearning-pytorch-red) ![](https://img.shields.io/badge/data%20science-XAI-yellowgreen)
 ## Results Branch
 
 ### <font color = 'green'> Project Results for Reproducible Research </font> :bar_chart:
