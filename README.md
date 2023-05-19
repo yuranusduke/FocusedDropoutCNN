@@ -60,7 +60,7 @@ In this part, we dynamically update our contribution in results part for our gro
 
 :heavy_check_mark: 2023/05/19: Kunhong Yu adds results on CIFAR10 with VGG19Net for all methods.
 
-### To cite our work
+## To cite our work :black_nib:
 
 Also we would appreciate it if receiving a star :star:.
 
