@@ -114,7 +114,7 @@ In order to reduce training time, we did not follow exact hyper-parameters setti
 Please refer to [result page](https://github.com/yuranusduke/FocusedDropoutCNN/tree/results).
 
 
-## Contributions
+## Contributions :blush:
 
 In this part, we dynamically update our contribution in code part for our group with three people. For results' contributions, please refer to [result page](https://github.com/yuranusduke/FocusedDropoutCNN/tree/results).
 
