@@ -114,7 +114,7 @@ In order to reduce training time, we did not follow exact hyper-parameters setti
 Please refer to [result page](https://github.com/yuranusduke/FocusedDropoutCNN/tree/results).
 
 
-## Contributions :blush:
+## Contributions 
 
 In this part, we dynamically update our contribution in code part for our group with three people. For results' contributions, please refer to [result page](https://github.com/yuranusduke/FocusedDropoutCNN/tree/results).
 
@@ -160,7 +160,7 @@ Overfitting [[ref]](https://www.cs.toronto.edu/~rsalakhu/papers/srivastava14a.pd
 - SGDR: Stochastic Gradient Descent with Warm Restarts [[ref]](https://arxiv.org/pdf/1608.03983.pdf)
 
 
-### To cite our work
+### To cite our work :black_nib:
 
 Also we would appreciate it if receiving a star :star:.
 
