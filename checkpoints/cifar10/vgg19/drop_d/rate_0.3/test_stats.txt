@@ -1,0 +1,12 @@
+
+Path to be considered:.
+checkpoints/cifar10/vgg19/drop_d/rate_0.3/seed3
+checkpoints/cifar10/vgg19/drop_d/rate_0.3/seed2
+checkpoints/cifar10/vgg19/drop_d/rate_0.3/seed1
+Current accs' mean is 93.24, std is 0.09 || 93.24±0.09%.
+
+Path to be considered:.
+checkpoints/cifar10/vgg19/drop_d/rate_0.3/seed3
+checkpoints/cifar10/vgg19/drop_d/rate_0.3/seed2
+checkpoints/cifar10/vgg19/drop_d/rate_0.3/seed1
+Current accs' mean is 93.24, std is 0.09 || 93.24±0.09%.
