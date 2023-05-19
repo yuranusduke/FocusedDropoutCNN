@@ -90,6 +90,25 @@ pip install -r requirements.txt
 
 Here we display all codes we create in the project. `README.md` is markdown file you are reading now. `config.yaml` is a `yaml` file to build configuration like you will see in the next subsection. `checkpoints` is a folder which saves all trained models and details of training/testing. `data` stores data sets. `engine` stores training and testing functions, where `parse_results.py` is used to parse testing results to command line, `test.py` is used to test models, `train.py` and `train_one_epoch.py` are utilized to train models. `generate_anim_cam.py` generates animated CAM which you will see in the following section. `main.py` is main function of whole project. `models` stores all models' definitions, where `backbones` contains `densenet100`, all kinds of `resnet`, `vgg19` and `wrn28` models, `dropout` subfolder contains all kinds of dropout method, including FocusedDropout. `utils.py` contains utility functions. Last but not least, three more `bash` scripts are provided to run different kinds of experiments which you will gain more intuition in the following sections.	
 
+### Hyper-parameters and defaults
+
+Some hyper-parameters were not specified in original paper, we define as following from CV research field which are commonly accepted:
+
+```python
+OPTIM:
+  LR: 0.1 # initial learning rate          
+  MAX_EPOCH: 100 # max training epochs
+  PART_RATE: 0.1 # participation rate
+  WEIGHT_DECAY: 5e-4 # for FocusedDropout, we need to put higher weight decay as paper demonstrated
+  DROP_RATE: 0.3 # drop our ratio
+  DROP_METHOD: "" # drop method, ('no' (no dropout), 'd' (dropout), 'sd' (SpatialDropout), 'fd' (FocusedDropout), 'db' (DropBlock)
+  BLOCK_SIZE: 7 # default # block size in DropBlock
+
+MODEL:
+  BACKBONE: "resnet20" # resnet20/resnet56/resnet110/vgg19/densenet100/wrn28
+```
+In order to reduce training time, we did not follow exact hyper-parameters settings, for example, in original paper, authors used stepped learning rate decay, here, we use [cosine learning rate decay](https://arxiv.org/pdf/1608.03983.pdf) with max learning rate being 0.1, we also set max learning epochs being 100 instead of 300, default weight decay is 5e-4 and drop rate is 0.3 for fair comparison. In DropBlock method, we set block size to be 7. All models' batch size is 128 except 48 in wrn28 since we use `fp32` in wrn28. Due to above settings, we may see different cost curves in `Figure 5` from original paper, `Figure 5` is produced by stepped learning rate decay. As we have mentioned before, we want to know if proposal outperforms than other SOTA methods, ideally, in any reasonable settings, proposal is better than others, so want to reproduce this proof. To our knowledge, one of biggest advantages in FocusedDropout is there are no explicit hyper-parameters, in this repo, what we reproduce for other methods (e.g., Dropout, etc.) are hyper-parameter sensitive, we choose them randomly in a range that is reasonable in CV research.
+
 ## Results
 
 Please refer to [result page](https://github.com/yuranusduke/FocusedDropoutCNN/tree/results).
@@ -97,7 +116,7 @@ Please refer to [result page](https://github.com/yuranusduke/FocusedDropoutCNN/t
 
 ## Contributions
 
-In this part, we dynamically update our contribution in our group with three people.
+In this part, we dynamically update our contribution in code part for our group with three people. For results' contributions, please refer to [result page](https://github.com/yuranusduke/FocusedDropoutCNN/tree/results).
 
 :heavy_check_mark: 2023/04/07: Kunhong Yu creates original and empty repo to start project
 
