@@ -29,6 +29,7 @@ Created by: Kunhong Yu (444447)/Islam Islamov ()/Leyla Ellazova ()
 				- [ResNet20](#resnet20)
 				- [ResNet110](#resnet110)
 			- [Animation](#animation)
+	- [Contributions](#contributions)
 
 
 This branch will display all reproduced experiments' results.
