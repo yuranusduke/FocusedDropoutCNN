@@ -1,0 +1,12 @@
+
+Path to be considered:.
+checkpoints/cifar10/resnet56/drop_fd/rate_0./seed3
+checkpoints/cifar10/resnet56/drop_fd/rate_0./seed2
+checkpoints/cifar10/resnet56/drop_fd/rate_0./seed1
+Current accs' mean is 93.05, std is 0.99 || 93.05±0.99%.
+
+Path to be considered:.
+checkpoints/cifar10/resnet56/drop_fd/rate_0./seed3
+checkpoints/cifar10/resnet56/drop_fd/rate_0./seed2
+checkpoints/cifar10/resnet56/drop_fd/rate_0./seed1
+Current accs' mean is 93.05, std is 0.99 || 93.05±0.99%.
