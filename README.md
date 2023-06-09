@@ -68,7 +68,7 @@ We also illustrate some of training/testing statistics for different models like
 ##### VGG19Net
 BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
-![](./README/stats_vgg19_no.pdf)  |  ![](./README/stats_vgg19_d.pdf)|  ![](./README/stats_vgg19_sd.pdf)|  ![](./README/stats_vgg19_fd.pdf)
+![](./README/stats_vgg19_no.png)  |  ![](./README/stats_vgg19_d.png)|  ![](./README/stats_vgg19_sd.png)|  ![](./README/stats_vgg19_fd.png)
 
 
 ## Contributions
