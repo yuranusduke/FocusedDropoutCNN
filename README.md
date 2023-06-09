@@ -52,6 +52,26 @@ To mimic `Table1` and `Table2` in original paper, we run each experiment either 
 | DropoutBlock        |  92.01±0.07%  |  93.01±0.32%    |     |   93.35±0.1%   |     |     |
 | FocusedDropout      |  <font color = 'red'>**92.94±0.06%**</font> |  <font color = 'red'>**93.05±0.99%**</font>   |      |    <font color = 'red'>**93.41±0.2%**</font>  |     |      |
 
+#### CIFAR100
+
+| Method              | ResNet20        | ResNet56| ResNet110 | VGGNet19 | DenseNet|WRN28 |
+| :-----------------: | :-----------: |:-----------: |:-----------: |:-----------: |:-----------: |:-----------: |
+| Baseline       	  |  67.3±0.55%     |      |     |       |      |      |
+| Dropout             |   67.45±0.1%    |      |      |     |      |      |
+| SpatialDropout      | 65.14±0.27%  |       |      |      |      |      |
+| DropoutBlock        | 67.7±0.55%  |     |      |      |       |      |
+| FocusedDropout      | <font color = 'red'>**67.76±0.09%%**</font>  |      |      |      |      |      |
+
+### Stats
+
+We also illustrate some of training/testing statistics for different models like `Figure 5` in origial paper, one can refer to detailed code. Here we only list some of the training/testing stats in both data sets.
+
+#### CIFAR10
+
+##### VGG19Net
+BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](./README/stats_vgg19_no.pdf)  |  ![](./README/stats_vgg19_d.pdf)|  ![](./README/stats_vgg19_sd.pdf)|  ![](./README/stats_vgg19_fd.pdf)
 
 
 ## Contributions
@@ -63,6 +83,8 @@ In this part, we dynamically update our contribution in results part for our gro
 :heavy_check_mark: 2023/05/22: Kunhong Yu finishes experiments on CIFAR10 with ResNet20, adds results on CIFAR10 with ResNet20 for all methods.
 
 :heavy_check_mark: 2023/05/27: Kunhong Yu finishes experiments on CIFAR10 with ResNet56, adds results on CIFAR10 with ResNet56 for all methods.
+
+:heavy_check_mark: 2023/06/09: Kunhong Yu finishes experiments on CIFAR100 with ResNet20, adds results on CIFAR100 with ResNet20 for all methods, also update `README.md` with training statistics on VGG19 with CIFAR10.
 
 
 ## To cite our work :black_nib:
