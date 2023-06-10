@@ -1,0 +1,3 @@
+If you retrain the whole models again following our instructions, data sets will be downloaded automatically from: https://www.cs.toronto.edu/~kriz/cifar.html
+
+Since two data sets are images, which are large regarding sizes, so we don't upload them as independent files.
