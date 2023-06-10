@@ -148,6 +148,8 @@ In this part, we dynamically update our contribution in code part for our group 
 
 :heavy_check_mark: 2023/06/10: Islam Islamov adds `wrn28.py` to backbones folder.
 
+:heavy_check_mark: 2023/06/10: Leyla Ellazova adds student id.
+
 
 ## References
 - FocusedDropout for Convolutional Neural Network [[ref]](https://arxiv.org/abs/2103.15425)
