@@ -144,6 +144,10 @@ In this part, we dynamically update our contribution in code part for our group 
 
 :heavy_check_mark: 2023/05/17: Kunhong Yu adds few more python files and fixes bugs in code and update README.md.
 
+:heavy_check_mark: 2023/06/10: Islam Islamov adds student id and makes some testing.
+
+:heavy_check_mark: 2023/06/10: Islam Islamov adds `wrn28.py` to backbones folder.
+
 
 ## References
 - FocusedDropout for Convolutional Neural Network [[ref]](https://arxiv.org/abs/2103.15425)
