@@ -13,7 +13,7 @@ Created by: Kunhong Yu (444447)/Islam Islamov (444601)/Leyla Ellazova (444831)
 	- [Implementation](#implementation)
 		- [Code Organization](#code-organization)
 		- [Hyper-parameters and defaults](#hyper-parameters-and-defaults)
-		- [Train & Test](#train-&-test)
+		- [Train and Test](#train-and-test)
 	- [Results](#results)
 	- [Contributions](#contributions)
 	- [References](#references)
@@ -109,7 +109,7 @@ MODEL:
 ```
 In order to reduce training time, we did not follow exact hyper-parameters settings, for example, in original paper, authors used stepped learning rate decay, here, we use [cosine learning rate decay](https://arxiv.org/pdf/1608.03983.pdf) with max learning rate being 0.1, we also set max learning epochs being 100 instead of 300, default weight decay is 5e-4 and drop rate is 0.3 for fair comparison. In DropBlock method, we set block size to be 7. All models' batch size is 128 except 48 in wrn28 since we use `fp32` in wrn28. Due to above settings, we may see different cost curves in `Figure 5` from original paper, `Figure 5` is produced by stepped learning rate decay. As we have mentioned before, we want to know if proposal outperforms than other SOTA methods, ideally, in any reasonable settings, proposal is better than others, so want to reproduce this proof. To our knowledge, one of biggest advantages in FocusedDropout is there are no explicit hyper-parameters, in this repo, what we reproduce for other methods (e.g., Dropout, etc.) are hyper-parameter sensitive, we choose them randomly in a range that is reasonable in CV research.
 
-### Train & Test
+### Train and Test
 
 We prepare `bash` scripts to run all experiments at your ease, below are some examples:
 
