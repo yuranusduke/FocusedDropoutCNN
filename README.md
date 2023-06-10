@@ -12,7 +12,7 @@ Created by: Kunhong Yu (444447)/Islam Islamov (444601)/Leyla Ellazova (444831)
 	- [Requirements](#requirements)
 	- [Implementation](#implementation)
 		- [Code Organization](#code-organization)
-		- [Hyper-parameters and defaults](#hyper-parameters-and-defaults)
+		- [Hyper-parameters and Defaults](#hyper-parameters-and-defaults)
 		- [Train and Test](#train-and-test)
 	- [Results](#results)
 	- [Contributions](#contributions)
@@ -90,7 +90,7 @@ pip install -r requirements.txt
 
 Here we display all codes we create in the project. `README.md` is markdown file you are reading now. `config.yaml` is a `yaml` file to build configuration like you will see in the next subsection. `checkpoints` is a folder which saves all trained models and details of training/testing. `data` stores data sets. `engine` stores training and testing functions, where `parse_results.py` is used to parse testing results to command line, `test.py` is used to test models, `train.py` and `train_one_epoch.py` are utilized to train models. `generate_anim_cam.py` generates animated CAM which you will see in the following section. `main.py` is main function of whole project. `models` stores all models' definitions, where `backbones` contains `densenet100`, all kinds of `resnet`, `vgg19` and `wrn28` models, `dropout` subfolder contains all kinds of dropout method, including FocusedDropout. `utils.py` contains utility functions. Last but not least, three more `bash` scripts are provided to run different kinds of experiments which you will gain more intuition in the following sections.	
 
-### Hyper-parameters and defaults
+### Hyper-parameters and Defaults
 
 Some hyper-parameters were not specified in original paper, we define as following from CV research field which are commonly accepted:
 
