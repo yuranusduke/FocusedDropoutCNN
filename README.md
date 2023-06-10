@@ -4,7 +4,7 @@
 
 ### <font color = 'green'> Project for Reproducible Research </font> :art:
 
-Created by: Kunhong Yu (444447)/Islam Islamov ()/Leyla Ellazova ()
+Created by: Kunhong Yu (444447)/Islam Islamov (444601)/Leyla Ellazova ()
 
 - [Main Contents]()
 	- [Background](#background)
