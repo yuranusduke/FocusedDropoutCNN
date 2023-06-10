@@ -46,11 +46,11 @@ To mimic `Table1` and `Table2` in original paper, we run each experiment either 
 
 | Method              | ResNet20        | ResNet56| ResNet110 | VGGNet19 | DenseNet|WRN28 |
 | :-----------------: | :-----------: |:-----------: |:-----------: |:-----------: |:-----------: |:-----------: |
-| Baseline       	  |  92.01±0.07%     |   92.22±0.32%   |     |   93.35±0.1%   |      |      |
-| Dropout             |  92.08±0.09%    |   92.86±0.29%   |       |   93.24±0.09%  |      |      |
-| SpatialDropout      |  91.76±0.15% |   92.83±0.67%   |      |   93.37±0.13%   |     |      |
-| DropoutBlock        |  92.01±0.07%  |  93.01±0.32%    |     |   93.35±0.1%   |     |     |
-| FocusedDropout      |  <font color = 'red'>**92.94±0.06%**</font> |  <font color = 'red'>**93.05±0.99%**</font>   |      |    <font color = 'red'>**93.41±0.2%**</font>  |     |      |
+| Baseline       	  |  92.01±0.07%     |   92.22±0.32%   |  93.24±0.21%   |   93.35±0.1%   |      |      |
+| Dropout             |  92.08±0.09%    |   92.86±0.29%   |   93.08±0.36%     |   93.24±0.09%  |      |      |
+| SpatialDropout      |  91.76±0.15% |   92.83±0.67%   |   93.21±0.32%   |   93.37±0.13%   |     |      |
+| DropoutBlock        |  92.01±0.07%  |  93.01±0.32%    |  <font color = 'blue'>**93.24±0.21%**</font>    |   93.35±0.1%   |     |     |
+| FocusedDropout      |  <font color = 'red'>**92.94±0.06%**</font> |  <font color = 'red'>**93.05±0.99%**</font>   |  93.01±0.37    |    <font color = 'red'>**93.41±0.2%**</font>  |     |      |
 
 #### CIFAR100 Accuracy
 
