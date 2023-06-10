@@ -150,6 +150,8 @@ In this part, we dynamically update our contribution in code part for our group 
 
 :heavy_check_mark: 2023/06/10: Leyla Ellazova adds student id.
 
+:heavy_check_mark: 2023/06/10: Leyla Ellazova added vgg19.py to backbone folder.
+
 
 ## References
 - FocusedDropout for Convolutional Neural Network [[ref]](https://arxiv.org/abs/2103.15425)
