@@ -13,7 +13,6 @@ Created by: Kunhong Yu (444447)/Islam Islamov (444601)/Leyla Ellazova (444831)
 	- [Implementation](#implementation)
 		- [Code Organization](#code-organization)
 		- [Hyper-parameters and defaults](#hyper-parameters-and-defaults)
-		- [Train & Test](#train-&-test)
 	- [Results](#results)
 	- [Contributions](#contributions)
 	- [References](#references)
@@ -150,7 +149,7 @@ In this part, we dynamically update our contribution in code part for our group 
 
 :heavy_check_mark: 2023/06/10: Leyla Ellazova adds student id.
 
-:heavy_check_mark: 2023/06/10: Leyla Ellazova added vgg19.py to backbone folder.
+:heavy_check_mark: 2023/06/10: Leyla Ellazova added `vgg19.py` to backbone folder.
 
 
 ## References
