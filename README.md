@@ -56,11 +56,11 @@ To mimic `Table1` and `Table2` in original paper, we run each experiment either 
 
 | Method              | ResNet20        | ResNet56| ResNet110 | VGGNet19 | DenseNet|WRN28 |
 | :-----------------: | :-----------: |:-----------: |:-----------: |:-----------: |:-----------: |:-----------: |
-| Baseline       	  |  67.3±0.55%     |      |     |       |      |      |
-| Dropout             |   67.45±0.1%    |      |      |     |      |      |
-| SpatialDropout      | 65.14±0.27%  |       |      |      |      |      |
-| DropoutBlock        | 67.7±0.55%  |     |      |      |       |      |
-| FocusedDropout      | <font color = 'red'>**67.76±0.09%**</font>  |      |      |      |      |      |
+| Baseline       	  |  67.3±0.55%     |  70.83±1.01%    |  72.25±0.59%   |       |      |      |
+| Dropout             |   67.45±0.1%    |  71.8±0.49%    |  71.88±0.52%    |     |      |      |
+| SpatialDropout      | 65.14±0.27%  |   70.25±0.4%    |   70.25±0.12%    |      |      |      |
+| DropoutBlock        | 67.7±0.55%  |  70.83±1.01%   |      72.25±0.59%|      |       |      |
+| FocusedDropout      | <font color = 'red'>**67.76±0.09%**</font>  |   <font color = 'red'>**71.95±0.21%**</font>   |   <font color = 'red'>**72.46±0.47%**</font>   |      |      |      |
 
 ### Stats
 We also illustrate some of training/testing statistics for different models like `Figure 5` in origial paper, one can refer to detailed code. Here we only list some of the training/testing stats in both data sets.
@@ -69,6 +69,33 @@ We also illustrate some of training/testing statistics for different models like
 BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](./README/stats_vgg19_no.png)  |  ![](./README/stats_vgg19_d.png)|  ![](./README/stats_vgg19_sd.png)|  ![](./README/stats_vgg19_fd.png)
+
+#### CIFAR100
+##### ResNet20
+BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](./README/stats_resnet20_no_100.png)  |  ![](./README/stats_resnet20_d_100.png)|  ![](./README/stats_resnet20_sd_100.png)|  ![](./README/stats_resnet20_fd_100.png)
+
+### CAM
+[Class-activation Map](https://arxiv.org/abs/1512.04150) (CAM) is an XAI technique to understand what Convolutional Neural Nets (CNNs) learn for each image, concretely, it finds weight in the last convolutional layer which makes classification to visualize along with input image using heatmap. In order to reproduce some of figures in `Figure 4` from original paper, we reimplement CAM and display samples of them, notice resolution is different since in original paper, they use images from TinyImageNet data set where image size is larger than CIFAR10/100, but the idea is the same.
+
+#### CIFAR10
+
+##### ResNet56
+
+BaseLine             |  Dropout (0.3)|  DropBlock (0.3)|  FocusedDropout
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](./README/cam_resnet56_no.png)  |  ![](./README/cam_resnet56_d.png)|  ![](./README/cam_resnet56_db.png)|  ![](./README/cam_resnet56_fd.png)
+
+#### CIFAR100
+
+##### ResNet20
+
+BaseLine             |  Dropout (0.3)|  DropBlock (0.3)|  FocusedDropout
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](./README/cam_resnet20_no_100.png)  |  ![](./README/cam_resnet20_d_100.png)|  ![](./README/cam_resnet20_db_100.png)|  ![](./README/cam_resnet20_fd_100.png)
+
+
 
 
 ## Contributions
@@ -82,6 +109,8 @@ In this part, we dynamically update our contribution in results part for our gro
 :heavy_check_mark: 2023/05/27: Kunhong Yu finishes experiments on CIFAR10 with ResNet56, adds results on CIFAR10 with ResNet56 for all methods.
 
 :heavy_check_mark: 2023/06/09: Kunhong Yu finishes experiments on CIFAR100 with ResNet20, adds results on CIFAR100 with ResNet20 for all methods, also update `README.md` with training statistics on VGG19 with CIFAR10.
+
+:heavy_check_mark: 2023/06/13: Kunhong Yu finishes experiments on CIFAR100 with ResNet56 and ResNet110, adds results on CIFAR100 with ResNet56 and ResNet110 for all methods, also update `README.md` with training statistics on ResNet20 with CIFAR100, also update CAM on ResNet56 with CIFAR10 and on ResNet20 with CIFAR100.
 
 
 ## To cite our work :black_nib:
