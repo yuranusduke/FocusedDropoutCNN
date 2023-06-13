@@ -70,7 +70,7 @@ BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](./README/stats_vgg19_no.png)  |  ![](./README/stats_vgg19_d.png)|  ![](./README/stats_vgg19_sd.png)|  ![](./README/stats_vgg19_fd.png)
 
-#### CIFAR100
+#### CIFAR100 Stats
 ##### ResNet20
 BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
@@ -79,7 +79,7 @@ BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
 ### CAM
 [Class-activation Map](https://arxiv.org/abs/1512.04150) (CAM) is an XAI technique to understand what Convolutional Neural Nets (CNNs) learn for each image, concretely, it finds weight in the last convolutional layer which makes classification to visualize along with input image using heatmap. In order to reproduce some of figures in `Figure 4` from original paper, we reimplement CAM and display samples of them, notice resolution is different since in original paper, they use images from TinyImageNet data set where image size is larger than CIFAR10/100, but the idea is the same.
 
-#### CIFAR10
+#### CIFAR10 CAM
 
 ##### ResNet56
 
@@ -87,7 +87,7 @@ BaseLine             |  Dropout (0.3)|  DropBlock (0.3)|  FocusedDropout
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](./README/cam_resnet56_no.png)  |  ![](./README/cam_resnet56_d.png)|  ![](./README/cam_resnet56_db.png)|  ![](./README/cam_resnet56_fd.png)
 
-#### CIFAR100
+#### CIFAR100 CAM
 
 ##### ResNet20
 
