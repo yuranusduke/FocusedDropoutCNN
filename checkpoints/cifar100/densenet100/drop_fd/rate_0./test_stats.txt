@@ -1,0 +1,24 @@
+
+Path to be considered:.
+checkpoints/cifar100/densenet100/drop_fd/rate_0./seed3
+checkpoints/cifar100/densenet100/drop_fd/rate_0./seed2
+checkpoints/cifar100/densenet100/drop_fd/rate_0./seed1
+Current accs' mean is 77.78, std is 0.07 || 77.78±0.07%.
+
+Path to be considered:.
+checkpoints/cifar100/densenet100/drop_fd/rate_0./seed3
+checkpoints/cifar100/densenet100/drop_fd/rate_0./seed2
+checkpoints/cifar100/densenet100/drop_fd/rate_0./seed1
+Current accs' mean is 77.78, std is 0.07 || 77.78±0.07%.
+
+Path to be considered:.
+checkpoints/cifar100/densenet100/drop_fd/rate_0./seed3
+checkpoints/cifar100/densenet100/drop_fd/rate_0./seed2
+checkpoints/cifar100/densenet100/drop_fd/rate_0./seed1
+Current accs' mean is 77.78, std is 0.07 || 77.78±0.07%.
+
+Path to be considered:.
+checkpoints/cifar100/densenet100/drop_fd/rate_0./seed3
+checkpoints/cifar100/densenet100/drop_fd/rate_0./seed2
+checkpoints/cifar100/densenet100/drop_fd/rate_0./seed1
+Current accs' mean is 77.78, std is 0.07 || 77.78±0.07%.

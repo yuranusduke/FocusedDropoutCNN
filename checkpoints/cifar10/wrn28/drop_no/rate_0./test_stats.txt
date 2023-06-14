@@ -1,0 +1,10 @@
+
+Path to be considered:.
+checkpoints/cifar10/wrn28/drop_no/rate_0./seed3
+checkpoints/cifar10/wrn28/drop_no/rate_0./seed1
+Current accs' mean is 95.56, std is 0.09 || 95.56±0.09%.
+
+Path to be considered:.
+checkpoints/cifar10/wrn28/drop_no/rate_0./seed3
+checkpoints/cifar10/wrn28/drop_no/rate_0./seed1
+Current accs' mean is 95.56, std is 0.09 || 95.56±0.09%.
