@@ -70,7 +70,7 @@ To mimic `Table1` and `Table2` in original paper, we run each experiment either 
 | FocusedDropout      | <font color = 'red'>**67.76±0.09%**</font>  |   <font color = 'red'>**71.95±0.21%**</font>   |   <font color = 'red'>**72.46±0.47%**</font>   |      |      |      |
 
 ### Stats
-We also illustrate some of training/testing statistics for different models like `Figure 5` in origial paper, one can refer to detailed code. Here we only list some of the training/testing stats in both data sets. These figures do not look like ones in original paper because we use different training strategy, however, what's important if we can reach ideal performance, not the shape of loss functions. When you run above `parse_full.sh`, these stats plots are generated automatically in corresponding folders.
+We also illustrate some of training/testing statistics for different models like `Figure 5` in origial paper, one can refer to detailed code. Here we only list some of the training/testing stats in both data sets. These figures do not look like ones in original paper because we use different training strategy, however, what's important if we can reach ideal performance, not the shape of loss functions. When you run above `parse_full.sh`, these stats plots are generated automatically in corresponding folders. Moreover, take a look at right sub-figure in `Figure 5` in the paper, they condcut experiments for many epochs, we can not burden such computation resource, for most of our experiments, we use 100 epochs as defaults, as we can see, we can reproduce loss function in the first 100 epochs, which means these works are reproducible. 
 #### CIFAR10 Stats
 ##### VGG19Net
 BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
