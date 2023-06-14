@@ -21,6 +21,8 @@ Created by: Kunhong Yu (444447)/Islam Islamov (444601)/Leyla Ellazova (444831)
 First of all, thank the authors very much for sharing this excellent paper [***FocusedDropout for Convolutional Neural Network***](https://arxiv.org/abs/2103.15425) with us. This repository contains FoucusedDropout and some basic implementation of experiments in paper. 
 Specifically, we reproduce `Table 1`, `Table 2`, `Figure 4` and `Figure 5`. Since authors did not release original code and some important hyper-parameters, we try our best to achieve performance they claim in the paper, but the main motivation is to verify the proposed FocusedDropout is state-of-the-art, not to show exact testing accuracy, we use NVIDIA RTX A5000 to train and test all models, but we can not burden a lot of costs of all experiments, that's why we only reproduce parts of them.
 
+**Trouble Shooting: If you encounter a problem like: checkpoints/cifar100/resnet56/drop_no/rate_0./seed3/cam/cam_72.pdf is invalid path when switching branches, just run `git config core.protectNTFS false` and reswitch branches, it is partially because we write code on MacBook, but you may use Windows, two computers don’t have the same file systems.**
+
 ## Background
 Dropout is a common-used technique in Neural Network (*e.g.* CNN, RNN, Transformer, etc.) to prevent co-adaptation and overfitting. In this paper, authors propose a novel dropout technique -- FocusedDropout, which does not drop neurons randomly, but 
 focuses more on elements related with classification information.
