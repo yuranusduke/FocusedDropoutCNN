@@ -135,6 +135,7 @@ In this part, we dynamically update our contribution in results part for our gro
 
 :heavy_check_mark: 2023/06/14: Islam Islamov finishes all experiments on CIFAR10 with the rest of models and updates `README.md`, and uploads more stats results.
 
+:heavy_check_mark: 2023/06/14: Islam Islamov added student id as it was added wrongly earlier.
 
 ## To cite our work :black_nib:
 
