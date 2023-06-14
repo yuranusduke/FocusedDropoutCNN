@@ -22,7 +22,7 @@ First of all, thank the authors very much for sharing this excellent paper [***F
 Specifically, we reproduce `Table 1`, `Table 2`, `Figure 4` and `Figure 5`. Since authors did not release original code and some important hyper-parameters, we try our best to achieve performance they claim in the paper, but the main motivation is to verify the proposed FocusedDropout is state-of-the-art, not to show exact testing accuracy, we use NVIDIA RTX A5000 to train and test all models, but we can not burden a lot of costs of all experiments, that's why we only reproduce parts of them.
 
 ## Background
-Dropout is a common-used technique in Neural Network (e.g. CNN, RNN, Transformer, etc.) to prevent co-adaptation and overfitting. In this paper, authors propose a novel dropout technique -- FocusedDropout, which does not drop neurons randomly, but 
+Dropout is a common-used technique in Neural Network (*e.g.* CNN, RNN, Transformer, etc.) to prevent co-adaptation and overfitting. In this paper, authors propose a novel dropout technique -- FocusedDropout, which does not drop neurons randomly, but 
 focuses more on elements related with classification information.
 
 <p align="center">
@@ -107,33 +107,33 @@ OPTIM:
 MODEL:
   BACKBONE: "resnet20" # resnet20/resnet56/resnet110/vgg19/densenet100/wrn28
 ```
-In order to reduce training time, we did not follow exact hyper-parameters settings, for example, in original paper, authors used stepped learning rate decay, here, we use [cosine learning rate decay](https://arxiv.org/pdf/1608.03983.pdf) with max learning rate being 0.1, we also set max learning epochs being 100 instead of 300, default weight decay is 5e-4 and drop rate is 0.3 for fair comparison. In DropBlock method, we set block size to be 7. All models' batch size is 128 except 48 in wrn28 since we use `fp32` in wrn28. Due to above settings, we may see different cost curves in `Figure 5` from original paper, `Figure 5` is produced by stepped learning rate decay. As we have mentioned before, we want to know if proposal outperforms than other SOTA methods, ideally, in any reasonable settings, proposal is better than others, so want to reproduce this proof. To our knowledge, one of biggest advantages in FocusedDropout is there are no explicit hyper-parameters, in this repo, what we reproduce for other methods (e.g., Dropout, etc.) are hyper-parameter sensitive, we choose them randomly in a range that is reasonable in CV research.
+In order to reduce training time, we did not follow exact hyper-parameters settings, for example, in original paper, authors used stepped learning rate decay, here, we use [cosine learning rate decay](https://arxiv.org/pdf/1608.03983.pdf) with max learning rate being 0.1, we also set max learning epochs being 100 instead of 300, default weight decay is 5e-4 and drop rate is 0.3 for fair comparison. In DropBlock method, we set block size to be 7. All models' batch size is 128 except 48 in wrn28 since we use `fp32` in wrn28. Due to above settings, we may see different cost curves in `Figure 5` from original paper, `Figure 5` is produced by stepped learning rate decay. As we have mentioned before, we want to know if proposal outperforms than other SOTA methods, ideally, in any reasonable settings, proposal is better than others, so want to reproduce this proof. To our knowledge, one of biggest advantages in FocusedDropout is there are no explicit hyper-parameters, in this repo, what we reproduce for other methods (*e.g.*, Dropout, etc.) are hyper-parameter sensitive, we choose them randomly in a range that is reasonable in CV research.
 
 ### Train and Test
 
 We prepare `bash` scripts to run all experiments at your ease, below are some examples:
 
-1. To run cifar10 with resnet20 and no dropout:
+1. To train CIFAR10 with resnet20 and no dropout:
 ```bash
 bash run.sh cifar10 resnet20 no 0. 
 ```
 
-2. To run cifar10 with resnet56 and FocusedDropout:
+2. To train CIFAR10 with resnet56 and FocusedDropout:
 ```bash
 bash run.sh cifar10 resnet56 fd 0. 
 ```
 
-3. To run cifar100 with wrn28 and SpatialDropout and drop rate 0.5:
+3. To train CIFAR100 with wrn28 and SpatialDropout and drop rate 0.5:
 ```bash
 bash run.sh cifar100 wrn28 sd 0.5 
 ```
 
-4. To run cifar100 with vgg19 and DropBlock and drop rate 0.5:
+4. To train CIFAR100 with vgg19 and DropBlock and drop rate 0.5:
 ```bash
 bash run.sh cifar100 vgg19 db 0.5 
 ```
 
-5. To run cifar10 with densenet100 and Dropout and drop rate 0.5:
+5. To train CIFAR10 with densenet100 and Dropout and drop rate 0.5:
 ```bash
 bash run.sh cifar10 densenet100 d 0.5 
 ```
