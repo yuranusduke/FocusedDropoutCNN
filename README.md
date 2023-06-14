@@ -102,6 +102,7 @@ BaseLine             |  Dropout (0.3)|  DropBlock (0.3)|  FocusedDropout
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](./README/cam_resnet20_no_100.png)  |  ![](./README/cam_resnet20_d_100.png)|  ![](./README/cam_resnet20_db_100.png)|  ![](./README/cam_resnet20_fd_100.png)
 
+We successfully reproduce that CNN focuses more on correct objects in all images for all methods mentioned in the original paper.
 
 
 
