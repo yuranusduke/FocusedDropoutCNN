@@ -55,11 +55,11 @@ To mimic `Table1` and `Table2` in original paper, we run each experiment either 
 
 | Method              | ResNet20        | ResNet56| ResNet110 | VGGNet19 | DenseNet|WRN28 |
 | :-----------------: | :-----------: |:-----------: |:-----------: |:-----------: |:-----------: |:-----------: |
-| Baseline       	  |  92.01±0.07%     |   92.22±0.32%   |     |   93.35±0.1%   |      |      |
-| Dropout             |  92.08±0.09%    |   92.86±0.29%   |        |   93.24±0.09%  |      |      |
-| SpatialDropout      |  91.76±0.15% |   92.83±0.67%   |      |   93.37±0.13%   |     |      |
-| DropoutBlock        |  92.01±0.07%  |  93.01±0.32%    |     |   93.35±0.1%   |     |     |
-| FocusedDropout      |  <font color = 'red'>**92.94±0.06%**</font> |  <font color = 'red'>**93.05±0.99%**</font>   |      |    <font color = 'red'>**93.41±0.2%**</font>  |     |      |
+| Baseline       	  |   92.01±0.07%    |  92.22±0.32%    |   93.24±0.21%   |   93.35±0.1%   |   94.99±0.18%   |   95.56±0.09%   |
+| Dropout             |   92.08±0.09%    |  92.86±0.29%    |   93.08±0.36%    |   93.24±0.09%  |   94.73±0.21%   |   95.3±0.07%   |
+| SpatialDropout      |  91.76±0.15% |   92.83±0.67%   |  93.21±0.32%     |   93.37±0.13%   |  94.69±0.34%   |   95.21±0.09%   |
+| DropoutBlock        | 92.01±0.07%  |   93.22±0.32%   |  <font color = 'blue'>**93.24±0.21%**</font>    |   93.35±0.1%   |  94.99±0.18%    |   <font color = 'blue'>**95.56±0.09%**</font>   |
+| FocusedDropout      | <font color = 'red'>**92.94±0.06%**</font>  |   <font color = 'red'>**93.05±0.99%**</font>   |   93.01±0.37%   |    <font color = 'red'>**93.41±0.2%**</font>  |  <font color = 'red'>**95.00±0.11%**</font>   |   95.32±0.06%   |
 
 #### CIFAR100 Accuracy
 
@@ -80,6 +80,11 @@ BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](./README/stats_vgg19_no.png)  |  ![](./README/stats_vgg19_d.png)|  ![](./README/stats_vgg19_sd.png)|  ![](./README/stats_vgg19_fd.png)
 
+##### DenseNet
+BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](./README/stats_densenet100_no.png)  |  ![](./README/stats_densenet100_d.png)|  ![](./README/stats_densenet100_sd.png)|  ![](./README/stats_densenet100_fd.png)
+
 #### CIFAR100 Stats
 ##### ResNet20
 BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
@@ -97,6 +102,12 @@ BaseLine             |  Dropout (0.3)|  DropBlock (0.3)|  FocusedDropout
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](./README/cam_resnet56_no.png)  |  ![](./README/cam_resnet56_d.png)|  ![](./README/cam_resnet56_db.png)|  ![](./README/cam_resnet56_fd.png)
 
+##### ResNet110
+BaseLine             |  Dropout (0.3)|  DropBlock (0.3)|  FocusedDropout
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](./README/cam_resnet110_no.png)  |  ![](./README/cam_resnet110_d.png)|  ![](./README/cam_resnet110_db.png)|  ![](./README/cam_resnet110_fd.png)
+
+
 #### CIFAR100 CAM
 
 ##### ResNet20
@@ -106,7 +117,6 @@ BaseLine             |  Dropout (0.3)|  DropBlock (0.3)|  FocusedDropout
 ![](./README/cam_resnet20_no_100.png)  |  ![](./README/cam_resnet20_d_100.png)|  ![](./README/cam_resnet20_db_100.png)|  ![](./README/cam_resnet20_fd_100.png)
 
 As you can see, more blue regions show model focus more when doing classification, we thus successfully reproduce that CNN focuses more on correct and corresponding objects in all images for all methods as mentioned in the original paper.
-
 
 
 ## Contributions
@@ -122,6 +132,8 @@ In this part, we dynamically update our contribution in results part for our gro
 :heavy_check_mark: 2023/06/09: Kunhong Yu finishes experiments on CIFAR100 with ResNet20, adds results on CIFAR100 with ResNet20 for all methods, also update `README.md` with training statistics on VGG19 with CIFAR10.
 
 :heavy_check_mark: 2023/06/13: Kunhong Yu finishes experiments on CIFAR100 with ResNet56 and ResNet110, adds results on CIFAR100 with ResNet56 and ResNet110 for all methods, also update `README.md` with training statistics on ResNet20 with CIFAR100, also update CAM on ResNet56 with CIFAR10 and on ResNet20 with CIFAR100.
+
+:heavy_check_mark: 2023/06/14: Islam Islamov finishes all experiments on CIFAR10 with the rest of models and updates `README.md`, and uploads more stats results.
 
 
 ## To cite our work :black_nib:
