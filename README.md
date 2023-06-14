@@ -36,7 +36,7 @@ This branch will display all reproduced experiments' results.
 
 For the code part, please refer to [code page](https://github.com/yuranusduke/FocusedDropoutCNN).
 
-**NOTE:** When you git this branch, please merge with main branch in local machine.
+**NOTE: When you git this branch, please merge with main branch in local machine.**
 
 ## Results
 
