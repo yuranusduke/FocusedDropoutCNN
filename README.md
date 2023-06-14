@@ -36,11 +36,18 @@ This branch will display all reproduced experiments' results.
 
 For the code part, please refer to [code page](https://github.com/yuranusduke/FocusedDropoutCNN).
 
+**NOTE:** When you git this branch, please merge with main branch in local machine.
+
 ## Results
 
 If you refer to use pre-trained **everything**, please download our models [here](https://drive.google.com/file/d/1A4URXtEBpN95B3L6SQQjkOgkox1Afw43/view?usp=share_link), which is about 6GB in `zip` file, unzip it and keep file trees as they are, put them into `checkpoint` folder, in case there is no `checkpoint` folder, feel free to create one.
 
 ### Accuracy in Tables
+When reproducing accuracies, just run 
+```bash 
+bash parse_full.sh
+```
+
 #### CIFAR10 Accuracy
 To mimic `Table1` and `Table2` in original paper, we run each experiment either two or three times and report its mean and standard deviation on testing data sets.
 
@@ -63,7 +70,7 @@ To mimic `Table1` and `Table2` in original paper, we run each experiment either 
 | FocusedDropout      | <font color = 'red'>**67.76±0.09%**</font>  |   <font color = 'red'>**71.95±0.21%**</font>   |   <font color = 'red'>**72.46±0.47%**</font>   |      |      |      |
 
 ### Stats
-We also illustrate some of training/testing statistics for different models like `Figure 5` in origial paper, one can refer to detailed code. Here we only list some of the training/testing stats in both data sets.
+We also illustrate some of training/testing statistics for different models like `Figure 5` in origial paper, one can refer to detailed code. Here we only list some of the training/testing stats in both data sets. These figures do not look like ones in original paper because we use different training strategy, however, what's important if we can reach ideal performance, not the shape of loss functions. When you run above `parse_full.sh`, these stats plots are generated automatically in corresponding folders.
 #### CIFAR10 Stats
 ##### VGG19Net
 BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
@@ -77,7 +84,7 @@ BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
 ![](./README/stats_resnet20_no_100.png)  |  ![](./README/stats_resnet20_d_100.png)|  ![](./README/stats_resnet20_sd_100.png)|  ![](./README/stats_resnet20_fd_100.png)
 
 ### CAM
-[Class-activation Map](https://arxiv.org/abs/1512.04150) (CAM) is an XAI technique to understand what Convolutional Neural Nets (CNNs) learn for each image, concretely, it finds weight in the last convolutional layer which makes classification to visualize along with input image using heatmap. In order to reproduce some of figures in `Figure 4` from original paper, we reimplement CAM and display samples of them, notice resolution is different since in original paper, they use images from TinyImageNet data set where image size is larger than CIFAR10/100, but the idea is the same.
+[Class-activation Map](https://arxiv.org/abs/1512.04150) (CAM) is an XAI technique to understand what Convolutional Neural Nets (CNNs) learn for each image, concretely, it finds weight in the last convolutional layer which makes classification to visualize along with input image using heatmap. In order to reproduce some of figures in `Figure 4` from original paper, we reimplement CAM and display samples of them, notice resolution is different since in original paper, they use images from TinyImageNet data set where image size is larger than CIFAR10/100, but the idea is the same. These results are generated when testing models, it requires you have correpsonding python environment, packages and 6GB trained checkpoints where you can download from previous link.
 
 #### CIFAR10 CAM
 
