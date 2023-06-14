@@ -5,7 +5,7 @@
 
 ### <font color = 'green'> Project Results for Reproducible Research </font> :bar_chart:
 
-Created by: Kunhong Yu (444447)/Islam Islamov (444601)/Leyla Ellazova ()
+Created by: Kunhong Yu (444447)/Islam Islamov (444601)/Leyla Ellazova (444831)
 
 - [Results Contents]()
 	- [Results](#results)
