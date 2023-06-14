@@ -65,11 +65,11 @@ To mimic `Table1` and `Table2` in original paper, we run each experiment either 
 
 | Method              | ResNet20        | ResNet56| ResNet110 | VGGNet19 | DenseNet|WRN28 |
 | :-----------------: | :-----------: |:-----------: |:-----------: |:-----------: |:-----------: |:-----------: |
-| Baseline       	  |  67.3±0.55%     |  70.83±1.01%    |  72.25±0.59%   |       |      |      |
-| Dropout             |   67.45±0.1%    |  71.8±0.49%    |  71.88±0.52%    |     |      |      |
-| SpatialDropout      | 65.14±0.27%  |   70.25±0.4%    |   70.25±0.12%    |      |      |      |
-| DropoutBlock        | 67.7±0.55%  |  70.83±1.01%   |      72.25±0.59%|      |       |      |
-| FocusedDropout      | <font color = 'red'>**67.76±0.09%**</font>  |   <font color = 'red'>**71.95±0.21%**</font>   |   <font color = 'red'>**72.46±0.47%**</font>   |      |      |      |
+| Baseline       	  |  67.3±0.55%     |  70.83±1.01%    |   72.25±0.59%   |    70.57±0.09%   |   77.74±0.37%   |   78.12±0.22%   |
+| Dropout             |   67.45±0.1%    |    71.8±0.49%   |   71.88±0.52%   |   <font color = 'blue'>**70.97±0.18%**</font>   |   77.01±0.52%   |   78.32±0.14%   |
+| SpatialDropout      | 65.14±0.27%  |   70.25±0.4%    |    70.25±0.12%  |   70.24±0.28%   |   77.01±0.52%   |   78.28±0.12%   |
+| DropoutBlock        | 67.7±0.55%  |  70.83±1.01%    |  72.25±0.59%    |    70.57±0.09%  |   77.74±0.37%    |   78.12±0.22%   |
+| FocusedDropout      | <font color = 'red'>**67.76±0.09%**</font>  |   <font color = 'red'>**71.95±0.21%**</font>   |   <font color = 'red'>**72.46±0.47%**</font>   |   70.12±0.18%   |   <font color = 'red'>**77.78±0.07%**</font>   |   <font color = 'red'>**78.44±0.51%**</font>   |
 
 ### Stats
 We also illustrate some of training/testing statistics for different models like `Figure 5` in origial paper, one can refer to detailed code. Here we only list some of the training/testing stats in both data sets. These figures do not look like ones in original paper because we use different training strategy, however, what's important is if we can reach ideal performance (*e.g.*, loss function should stably go down during training, accuracy should go up), not the shape of loss functions. When you run above `parse_full.sh`, these stats plots are generated automatically in corresponding folders. Moreover, take a look at right sub-figure in `Figure 5` in the paper, they conduct experiments for many epochs, we can not burden such computation resource, for most of our experiments, we use 100 epochs as defaults, as we can see, we can reproduce loss function in the first 100 epochs, besides, take look at accuracy curve, for FocusedDropout, validation accuracy and training accuracy are more aligned, which means it has greater ability to combat overfitting as claimed in the paper, which means these works are reproducible. 
@@ -85,11 +85,28 @@ BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](./README/stats_densenet100_no.png)  |  ![](./README/stats_densenet100_d.png)|  ![](./README/stats_densenet100_sd.png)|  ![](./README/stats_densenet100_fd.png)
 
+##### ResNet110
+BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](./README/stats_resnet110_no.png)  |  ![](./README/stats_resnet110_d.png)|  ![](./README/stats_resnet110_sd.png)|  ![](./README/stats_resnet110_fd.png)
+
+
 #### CIFAR100 Stats
 ##### ResNet20
 BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](./README/stats_resnet20_no_100.png)  |  ![](./README/stats_resnet20_d_100.png)|  ![](./README/stats_resnet20_sd_100.png)|  ![](./README/stats_resnet20_fd_100.png)
+
+##### WRN28
+BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](./README/stats_wrn28_no_100.png)  |  ![](./README/stats_wrn28_d_100.png)|  ![](./README/stats_wrn28_sd_100.png)|  ![](./README/stats_wrn28_fd_100.png)
+
+##### ResNet56
+BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](./README/stats_resnet56_no_100.png)  |  ![](./README/stats_resnet56_d_100.png)|  ![](./README/stats_resnet56_sd_100.png)|  ![](./README/stats_resnet56_fd_100.png)
+
 
 ### CAM
 [Class-activation Map](https://arxiv.org/abs/1512.04150) (CAM) is an XAI technique to understand what Convolutional Neural Nets (CNNs) learn for each image, concretely, it finds weight in the last convolutional layer which makes classification to visualize along with input image using heatmap. In order to reproduce some of figures in `Figure 4` from original paper, we reimplement CAM and display samples of them, notice resolution is different since in original paper, they use images from TinyImageNet data set where image size is larger than CIFAR10/100, but the idea is the same. These results are generated when testing models, it requires you have correpsonding python environment, packages and 6GB trained checkpoints where you can download from previous link.
@@ -116,6 +133,12 @@ BaseLine             |  Dropout (0.3)|  DropBlock (0.3)|  FocusedDropout
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](./README/cam_resnet20_no_100.png)  |  ![](./README/cam_resnet20_d_100.png)|  ![](./README/cam_resnet20_db_100.png)|  ![](./README/cam_resnet20_fd_100.png)
 
+##### ResNet110
+BaseLine             |  Dropout (0.3)|  DropBlock (0.3)|  FocusedDropout
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](./README/cam_resnet110_no_100.png)  |  ![](./README/cam_resnet110_d_100.png)|  ![](./README/cam_resnet110_db_100.png)|  ![](./README/cam_resnet110_fd_100.png)
+
+
 As you can see, more blue regions show model focus more when doing classification, we thus successfully reproduce that CNN focuses more on correct and corresponding objects in all images for all methods as mentioned in the original paper.
 
 
@@ -136,6 +159,8 @@ In this part, we dynamically update our contribution in results part for our gro
 :heavy_check_mark: 2023/06/14: Islam Islamov finishes all experiments on CIFAR10 with the rest of models and updates `README.md`, and uploads more stats results.
 
 :heavy_check_mark: 2023/06/14: Islam Islamov added student id as it was added wrongly earlier.
+
+:heavy_check_mark: 2023/06/14: Leyla Ellazova finishes experiments on CIFAR100 with the rest of models and updates `README.md`, and uploads more stats results and CAM results.
 
 ## To cite our work :black_nib:
 
