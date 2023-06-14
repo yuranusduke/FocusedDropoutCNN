@@ -48,6 +48,8 @@ When reproducing accuracies, just run
 bash parse_full.sh
 ```
 
+As we've mentioned in the `main` branch, we can not reproduce exact accuracy metrics due to ambuiguity of hyper-parameters in the paper, but we use off-the-shelf values in common computer vision field, the core thing is to reveal that their proposed algorithm (*i.e.*, FocusedDropout) can achieve SOTA classification accuracy compared to other methods in most cases. From below two tables, we successfully prove this.
+
 #### CIFAR10 Accuracy
 To mimic `Table1` and `Table2` in original paper, we run each experiment either two or three times and report its mean and standard deviation on testing data sets.
 
@@ -70,7 +72,7 @@ To mimic `Table1` and `Table2` in original paper, we run each experiment either 
 | FocusedDropout      | <font color = 'red'>**67.76±0.09%**</font>  |   <font color = 'red'>**71.95±0.21%**</font>   |   <font color = 'red'>**72.46±0.47%**</font>   |      |      |      |
 
 ### Stats
-We also illustrate some of training/testing statistics for different models like `Figure 5` in origial paper, one can refer to detailed code. Here we only list some of the training/testing stats in both data sets. These figures do not look like ones in original paper because we use different training strategy, however, what's important if we can reach ideal performance, not the shape of loss functions. When you run above `parse_full.sh`, these stats plots are generated automatically in corresponding folders. Moreover, take a look at right sub-figure in `Figure 5` in the paper, they condcut experiments for many epochs, we can not burden such computation resource, for most of our experiments, we use 100 epochs as defaults, as we can see, we can reproduce loss function in the first 100 epochs, which means these works are reproducible. 
+We also illustrate some of training/testing statistics for different models like `Figure 5` in origial paper, one can refer to detailed code. Here we only list some of the training/testing stats in both data sets. These figures do not look like ones in original paper because we use different training strategy, however, what's important if we can reach ideal performance (*e.g.*, loss function should stably go down during training), not the shape of loss functions. When you run above `parse_full.sh`, these stats plots are generated automatically in corresponding folders. Moreover, take a look at right sub-figure in `Figure 5` in the paper, they condcut experiments for many epochs, we can not burden such computation resource, for most of our experiments, we use 100 epochs as defaults, as we can see, we can reproduce loss function in the first 100 epochs, which means these works are reproducible. 
 #### CIFAR10 Stats
 ##### VGG19Net
 BaseLine             |  Dropout (0.3)|  SpatialDropout (0.3)|  FocusedDropout
@@ -102,7 +104,7 @@ BaseLine             |  Dropout (0.3)|  DropBlock (0.3)|  FocusedDropout
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](./README/cam_resnet20_no_100.png)  |  ![](./README/cam_resnet20_d_100.png)|  ![](./README/cam_resnet20_db_100.png)|  ![](./README/cam_resnet20_fd_100.png)
 
-We successfully reproduce that CNN focuses more on correct objects in all images for all methods mentioned in the original paper.
+As you can see, more blue regions show model focus more when doing classification, we thus successfully reproduce that CNN focuses more on correct and corresponding objects in all images for all methods as mentioned in the original paper.
 
 
 
