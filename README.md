@@ -153,7 +153,7 @@ bash parse_full.sh
 ```
 to parse all results at once. But before doing this, check [result page](https://github.com/yuranusduke/FocusedDropoutCNN/tree/results) to find more details about `checkpoints`.
 
-Besides, if you wish to just test our models directly, first download pre-trained checkpoints: [here](https://drive.google.com/file/d/1A4URXtEBpN95B3L6SQQjkOgkox1Afw43/view?usp=share_link), which is about 6GB in `zip` file, unzip it and keep file trees as they are, put them into `checkpoint` folder, in case there is no `checkpoint` folder, feel free to create one. Then in the line 15 of code `run.sh`, set `EVALONLY=1`, then run `run.sh` or simply run all of them at once:
+Besides, if you wish to just test our models directly, first download pre-trained checkpoints: [here](https://drive.google.com/file/d/1A4URXtEBpN95B3L6SQQjkOgkox1Afw43/view?usp=share_link), which is about 6GB in `zip` file, unzip it and keep file trees as they are, put them into `checkpoint` folder, in case there is no `checkpoints` folder, feel free to create one. Then in the line 15 of code `run.sh`, set `EVALONLY=1`, then run `run.sh` or simply run all of them at once:
 
 ```bash
 bash run_all.sh
