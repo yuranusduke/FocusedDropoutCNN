@@ -162,6 +162,9 @@ In this part, we dynamically update our contribution in results part for our gro
 
 :heavy_check_mark: 2023/06/14: Leyla Ellazova finishes experiments on CIFAR100 with the rest of models and updates `README.md`, and uploads more stats results and CAM results.
 
+:heavy_check_mark: 2023/06/14: Leyla Ellazova updated id number in `README.md` .
+
+
 ## To cite our work :black_nib:
 
 Also we would appreciate it if receiving a star :star:.
