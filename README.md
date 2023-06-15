@@ -141,6 +141,30 @@ BaseLine             |  Dropout (0.3)|  DropBlock (0.3)|  FocusedDropout
 
 As you can see, more blue regions show model focus more when doing classification, we thus successfully reproduce that CNN focuses more on correct and corresponding objects in all images for all methods as mentioned in the original paper.
 
+#### Animation
+Last but not least, we generate animation of CAM heatmaps for all seed1 of renset-based models, here is one of them from resnet110 with CIFAR10 and CIFAR100 with FocusedDropout, you can find in the corresponding `cam` folder. Also, you can generate them by running 
+
+```bash
+for dataset in cifar10 cifar100
+do
+	for model in resnet20 resnet56 resnet110
+	do
+    for method in no d sd db fd
+    do
+      echo "Generating for ${dataset} with ${model} and using method ${method}..."
+      python generate_anim_cam.py --dataname ${dataset} --backbone ${model} --drop_method ${method}
+    done
+	done
+done
+``` 
+in `parse_full.sh` script.
+
+CIFAR10             |  CIFAR100| 
+:-------------------------:|:-------------------------:
+![](./README/im.gif)  |  ![](./README/im2.gif)
+
+For more animations, please refer to [Google Drive](https://drive.google.com/file/d/1DL_k0utF_NDz9Jg4ofDTc0sOvK34ONKk/view?usp=share_link).
+
 
 ## Contributions
 
@@ -162,7 +186,9 @@ In this part, we dynamically update our contribution in results part for our gro
 
 :heavy_check_mark: 2023/06/14: Leyla Ellazova finishes experiments on CIFAR100 with the rest of models and updates `README.md`, and uploads more stats results and CAM results.
 
-:heavy_check_mark: 2023/06/14: Leyla Ellazova updated id number in `README.md` .
+:heavy_check_mark: 2023/06/14: Leyla Ellazova updated id number in `README.md`.
+
+:heavy_check_mark: 2023/06/15: Kunhong Yu uploads animation of CAM and finishes whole project :beer:!
 
 
 ## To cite our work :black_nib:
